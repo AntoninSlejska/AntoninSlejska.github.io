@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonín Slejška - Senior Web Developer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #2d3748;
+      background: #fff;
+      font-size: 11pt;
+    }
+    .container {
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20mm;
+      background: #fff;
+      min-height: 297mm;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #3182ce;
+    }
+    .header-left h1 {
+      font-size: 32pt;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+    .header-left .title {
+      font-size: 14pt;
+      color: #3182ce;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 10pt;
+      line-height: 1.8;
+    }
+    .header-right .contact-item {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .header-right .contact-item strong {
+      font-weight: 600;
+      color: #2d3748;
+      margin-right: 8px;
+      min-width: 60px;
+    }
+    .section {
+      margin-bottom: 35px;
+    }
+    .section-title {
+      font-size: 16pt;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .experience-item, .education-item, .activity-item {
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 0;
+    }
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .position {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #1a202c;
+    }
+    .period {
+      font-size: 10pt;
+      color: #718096;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .company {
+      font-size: 11pt;
+      color: #3182ce;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .responsibilities {
+      list-style: none;
+      padding: 0;
+    }
+    .responsibilities li {
+      margin-bottom: 6px;
+      padding-left: 16px;
+      position: relative;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+    .responsibilities li:before {
+      content: "▸";
+      color: #3182ce;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .skill-category {
+      margin-bottom: 15px;
+    }
+    .skill-category-title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+    .skill-list {
+      font-size: 10pt;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+    .languages {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .language-item {
+      flex: 1;
+      min-width: 120px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+    .language-name {
+      font-weight: 600;
+      color: #1a202c;
+      font-size: 11pt;
+    }
+    .language-level {
+      font-size: 9pt;
+      color: #718096;
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: right;
+      font-size: 10pt;
+      color: #718096;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 20px;
+    }
+    .two-column {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      font: inherit;
+    }
+    @media print {
+      @page {
+        margin: 15mm 15mm 25mm 15mm;
+        box-shadow: none;
+        border: none;
+        background: #fff;
+        size: A4;
+        orphans: 3;
+        widows: 3;
+      }
+      body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: 100vh;
+      }
+      .container {
+        margin: 0;
+        padding: 15mm 15mm 70mm 15mm;
+        box-shadow: none;
+        position: relative;
+        min-height: calc(100vh - 40mm);
+      }
+      .footer {
+        position: absolute;
+        bottom: 15mm;
+        left: 15mm;
+        right: 15mm;
+        margin-top: 0;
+        page-break-inside: avoid;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 20px;
+        text-align: right;
+        font-size: 10pt;
+        color: #718096;
+        background: #fff;
+        break-after: avoid;
+      }
+
+      /* Ensure footer stays with content and appears only on last page */
+      .two-column {
+        page-break-after: avoid;
+      }
+
+      .two-column + .footer {
+        page-break-before: avoid;
+      }
+    }
+    .highlight {
+      background: linear-gradient(120deg, #e6fffa 0%, #e6fffa 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 40%;
+      background-position: 0 85%;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="header">
+    <div class="header-left">
+      <h1>Antonín Slejška</h1>
+      <div class="title">Senior Web Developer</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item"><strong>Adresse:</strong> Auf der Höchte 54, Garbsen</div>
+      <div class="contact-item"><strong>E-Mail:</strong> antonin@slejska.eu</div>
+      <div class="contact-item"><strong>Telefon:</strong> 0176 8177 1294</div>
+      <div class="contact-item"><strong>Geboren:</strong> 7. September 1972</div>
+      <div class="contact-item"><strong>Nationalität:</strong> tschechisch</div>
+      <div class="contact-item"><strong>Portfolio:</strong> <a href="https://lebenslauf.slejska.eu">lebenslauf.slejska.eu</a></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">Berufspraxis</h2>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">PHP Entwickler</div>
+        <div class="period">seit 05/2021</div>
+      </div>
+      <div class="company">WERTGARANTIE Group, Hannover</div>
+      <ul class="responsibilities">
+        <li>Entwicklung von Drupal-Webseiten für internationale Märkte (<a href="https://wertgarantie.de">wertgarantie.de</a>/.at/.es/.nl/.pt und <a href="https://linexo.de">linexo.de</a>/.at)</li>
+        <li>Drupal Modulen Entwicklung und Maintenance für Enterprise-Lösungen</li>
+        <li>Release-Management und automatisierte Deployments</li>
+        <li>Dokumentation und Prozessoptimierung</li>
+        <li>Sicherheitsüberwachung und Code-Quality-Assurance</li>
+        <li>Mentoring und Code-Reviews für Junior Entwickler</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">Senior-Webentwickler</div>
+        <div class="period">04/2017 – 04/2021</div>
+      </div>
+      <div class="company">Schlütersche Verlagsgesellschaft mbH & Co. KG, Hannover</div>
+      <ul class="responsibilities">
+        <li>Entwicklung und Wartung des internen Webseiten-Verwaltungssystems (Sitelab)</li>
+        <li>Drupal 8/9 Modulentwicklung für Verlagswebseiten</li>
+        <li>Betreuung von Fachportalen: Handwerk.com, Pflegen-online.de, Blechonline.de</li>
+        <li>Technische Projektleitung und Architektur-Entscheidungen</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">Webentwickler</div>
+        <div class="period">09/2015 – 03/2017</div>
+      </div>
+      <div class="company">Screen GmbH, Wolfsburg</div>
+      <ul class="responsibilities">
+        <li>Entwicklung von Online-Personalinformationssystemen</li>
+        <li>Beratungssysteme für die Automobilindustrie</li>
+        <li>Administration von Debian-Servern und DevOps-Aufgaben</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">Webmaster & Online Marketing Spezialist</div>
+        <div class="period">10/2010 – 08/2015</div>
+      </div>
+      <div class="company">Böhmische Schweiz Tourismus Verband, Krásná Lípa</div>
+      <ul class="responsibilities">
+        <li>Vollständige Webentwicklung und -verwaltung von Tourismusportalen</li>
+        <li>Online-Marketing-Kampagnen und SEO-Optimierung</li>
+        <li>Social Media Management (Facebook, Google+, Twitter)</li>
+        <li>Projektmanagement für digitale Tourismusprojekte</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">Webprogrammierer (Selbständig)</div>
+        <div class="period">02/2010 – 10/2010</div>
+      </div>
+      <div class="company">Krásná Lípa, Tschechische Republik</div>
+      <ul class="responsibilities">
+        <li>Abschluss von Forschungsprojekten in Webtechnologien</li>
+        <li>Entwicklung von Expertensystemen für Energiepflanzenanbau</li>
+        <li>Projektumsetzung für Biomasse-Verband (4biomass.eu)</li>
+      </ul>
+    </div>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div class="position">Wissenschaftlicher Mitarbeiter</div>
+        <div class="period">10/2005 – 01/2010</div>
+      </div>
+      <div class="company">Forschungsinstitut der Pflanzenproduktion, Chomutov</div>
+      <ul class="responsibilities">
+        <li>Entwicklung von Expertensystemen und Datenanalysesoftware</li>
+        <li>GIS-basierte Datenanalyse und statistische Auswertungen</li>
+        <li>Forschung in den Bereichen Kompostierung, Biogas und Energiepflanzen</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="two-column">
+    <div>
+      <section class="section">
+        <h2 class="section-title">Technische Expertise</h2>
+        <div class="skills-grid">
+          <div class="skill-category" style="page-break-inside: avoid;">
+            <div class="skill-category-title">Programmiersprachen</div>
+            <div class="skill-list">
+              <strong>Expert:</strong> PHP, JavaScript, Twig<br>
+              <strong>Fortgeschritten:</strong> MySQL, SASS, HTML5, CSS3<br>
+              <strong>Grundlagen:</strong> Python, Dart
+            </div>
+          </div>
+          <div class="skill-category" style="page-break-inside: avoid;">
+            <div class="skill-category-title">Frameworks & CMS</div>
+            <div class="skill-list">
+              <strong>Expert:</strong> Drupal 8/9/10/11<br>
+              <strong>Fortgeschritten:</strong> Laravel, Symfony, vue.js, React<br>
+              <strong>Tools:</strong> Git, Docker, CI/CD, just
+            </div>
+          </div>
+          <div class="skill-category" style="page-break-inside: avoid;">
+            <div class="skill-category-title">Online Marketing & Analytics</div>
+            <div class="skill-list">
+              Google Analytics, AdWords/AdSense<br>
+              SEO/SEM, Conversion Optimization
+            </div>
+          </div>
+          <div class="skill-category" style="page-break-inside: avoid;">
+            <div class="skill-category-title">Systeme</div>
+            <div class="skill-list">
+              VS Code, PhpStorm<br>
+              Gitlab, GitHub, Bitbucket, Bamboo<br>
+              Jira, Confluence, Asana<br>
+              Ubuntu/Linux, Windows<br>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="page-break-inside: avoid;">
+        <h2 class="section-title">Ausbildung</h2>
+        <div class="education-item">
+          <div class="experience-header">
+            <div class="position">Ingenieurstudium Holzingenieurwesen</div>
+            <div class="period">1990 – 1995</div>
+          </div>
+          <div class="company">Technische Universität Zvolen, Slowakische Republik</div>
+          <ul class="responsibilities">
+            <li>Abschluss: Ingenieur für Holzingenieurwesen</li>
+            <li>Diplomarbeit: Abiotische und biotische Zersetzung von Fichtenholz</li>
+          </ul>
+        </div>
+        <div class="education-item">
+          <div class="experience-header">
+            <div class="position">Gymnasium mit technischem Schwerpunkt</div>
+            <div class="period">1986 – 1990</div>
+          </div>
+          <div class="company">Volyně, Tschechische Republik</div>
+          <ul class="responsibilities">
+            <li>Abschluss: Abiturprüfung</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div>
+      <section class="section" style="page-break-inside: avoid;">
+        <h2 class="section-title">Sprachen</h2>
+        <div class="languages">
+          <div class="language-item">
+            <div class="language-name">Tschechisch</div>
+            <div class="language-level">Muttersprache</div>
+          </div>
+          <div class="language-item">
+            <div class="language-name">Englisch</div>
+            <div class="language-level">Fließend</div>
+          </div>
+          <div class="language-item">
+            <div class="language-name">Russisch</div>
+            <div class="language-level">Grundlagen</div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="page-break-inside: avoid;">
+        <h2 class="section-title">Weitere Aktivitäten</h2>
+        <div class="activity-item">
+          <div class="experience-header">
+            <div class="position">Vorstandsmitglied</div>
+            <div class="period">1995 – 2010</div>
+          </div>
+          <div class="company">CZ Biom – Tschechischer Biomasse-Verband</div>
+          <ul class="responsibilities">
+            <li>Webentwicklung und -verwaltung</li>
+            <li>IT-Projekte im Bereich Biomasse</li>
+          </ul>
+        </div>
+        <div class="activity-item">
+          <div class="experience-header">
+            <div class="position">Leiter IT-Fachkommission</div>
+            <div class="period">2002 – 2013</div>
+          </div>
+          <div class="company">Die Grüne Partei, Tschechien</div>
+          <ul class="responsibilities">
+            <li>Digitale Strategieentwicklung</li>
+            <li>Fachseminare und Analysen</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section" style="page-break-inside: avoid;">
+        <h2 class="section-title">Referenzen</h2>
+        <div style="font-size: 10pt; line-height: 1.6;">
+          <div>
+            <strong>Drupal.org:</strong><br>
+            <span style="color: #3182ce;"><a href="https://drupal.org/u/antonín-slejška">drupal.org/u/antonín-slejška</a></span>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>Portfolio:</strong><br>
+            <span style="color: #3182ce;"><a href="https://lebenslauf.slejska.eu">https://lebenslauf.slejska.eu</a></span>
+          </div>
+          <div style="margin-bottom: 10px;">
+            <strong>GitHub:</strong><br>
+            <span style="color: #3182ce;"><a href="https://github.com/AntoninSlejska">github.com/AntoninSlejska</a></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer class="footer">
+    Garbsen, 13. Juni 2025
+  </footer>
+</div>
+</body>
+</html>
